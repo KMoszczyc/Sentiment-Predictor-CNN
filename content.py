@@ -3,7 +3,7 @@ from tensorflow.python.keras.preprocessing.sequence import pad_sequences
 from tensorflow.python.keras.layers import Flatten, LSTM, GlobalMaxPooling1D, Embedding, Dense, Input, Dropout, Conv1D
 from tensorflow.python.keras.models import Model
 import numpy as np
-from tensorflow.keras.models import load_model, save_model
+from tensorflow.python.keras.models import load_model, save_model
 import pandas as pd
 import os
 import re
@@ -96,9 +96,9 @@ def create_model(tokenizer):
     deep_inputs = Input(shape=(MAX_LEN,))
     x = Embedding(max_features, embedding_dim)(deep_inputs)
     x = Dropout(0.5)(x)
-    x = Conv1D(64, 5, padding="valid", activation="relu")(x)
-    x = Conv1D(128, 5, padding="valid", activation="relu")(x)
-    x = Conv1D(256, 5, padding="valid", activation="relu")(x)
+    x = Conv1D(64, 8, padding="valid", activation="relu", strides=3)(x)
+    x = Conv1D(128, 8, padding="valid", activation="relu", strides=3)(x)
+    x = Conv1D(256, 8, padding="valid", activation="relu", strides=3)(x)
     x = GlobalMaxPooling1D()(x)
     x = Dense(128, activation="relu")(x)
     x = Dropout(0.5)(x)
@@ -135,7 +135,7 @@ def train():
     history = model.fit(x=X_train, y=np.array(train_set['sentiment']),
                         validation_data=(X_val, np.array(val_set['sentiment'])),
                         batch_size=128,
-                        epochs=5,
+                        epochs=3,
                         verbose=1)
 
     print(history.history['val_accuracy'])
