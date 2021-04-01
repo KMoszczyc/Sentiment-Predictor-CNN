@@ -4,7 +4,10 @@ from content import load_tokenizer, load_model, pad_sequences
 import pandas as pd
 import numpy as np
 import os
-# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
+# disable it during training (it causes crashes when flask server runs)
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
 np.set_printoptions(precision=2, suppress=True)
 
 app = flask.Flask(__name__)
