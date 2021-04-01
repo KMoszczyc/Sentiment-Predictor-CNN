@@ -22,7 +22,7 @@ def loadFiles(dir):
     return data
 
 def load_dataset():
-    imdb_dataset=pd.read_csv('IMDB Dataset.csv')
+    imdb_dataset=pd.read_csv('datasets/IMDB Dataset.csv')
     imdb_dataset.replace({"positive": 1, "negative": 0}, inplace=True)
     imdb_dataset['review'] = imdb_dataset['review'].map(lambda sentence: preprocess_text(sentence))
 
@@ -34,8 +34,8 @@ def load_dataset():
     return dataset
 
 def load_words():
-    X_neg = pd.read_csv('negative-words.txt', delimiter="\n")
-    X_pos = pd.read_csv('positive-words.txt', delimiter="\n")
+    X_neg = pd.read_csv('datasets/negative-words.txt', delimiter="\n")
+    X_pos = pd.read_csv('datasets/positive-words.txt', delimiter="\n")
     X_neg.columns = ['review']
     X_pos.columns = ['review']
     temp_df = pd.DataFrame(X_neg['review'].map(lambda word: 'not '+word), columns=['review'])
@@ -81,11 +81,11 @@ def vectorize_data(dataset, vectorizer):
     return X_data, y_data
 
 def save_tokenizer(tokenizer):
-    with open('tokenizer.pickle', 'wb') as handle:
+    with open('models/tokenizer.pickle', 'wb') as handle:
         pickle.dump(tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 def load_tokenizer():
-    with open('tokenizer.pickle', 'rb') as handle:
+    with open('models/tokenizer.pickle', 'rb') as handle:
         tokenizer = pickle.load(handle)
         return tokenizer
 
@@ -140,7 +140,7 @@ def train():
 
     print(history.history['val_accuracy'])
 
-    save_model(model, 'model_conv1d.h5')
+    save_model(model, 'models/model_conv1d.h5')
     save_tokenizer(tokenizer)
 
 def test():
@@ -172,10 +172,11 @@ def test():
     y_test = np.array([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0])
 
     tokenizer = load_tokenizer()
-    model = load_model('model_conv1d.h5')
+    model = load_model('model_conv2d.h5')
     X_test = tokenizer.texts_to_sequences(test_reviews)
     X_test = pad_sequences(X_test, padding='post', maxlen=2000)
     predictions = model.predict(x=X_test)
     print(predictions)
 
     model.evaluate(x=X_test, y=y_test)
+

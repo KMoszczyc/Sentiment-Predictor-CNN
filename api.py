@@ -14,7 +14,7 @@ app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
 tokenizer = load_tokenizer()
-model = load_model('model_conv1d.h5')
+model = load_model('models/model_conv1d.h5')
 
 @app.route('/predict', methods=['POST'])
 def predictTextSentiment():
