@@ -1,1 +1,1 @@
-web: gunicorn --preload wsgi:app
+web: gunicorn wsgi:app
