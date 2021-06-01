@@ -8,9 +8,10 @@ Deep learning model trained on IMDB dataset to predict sentence sentiment, with 
 - run wsgi.py
 - Open postman or any other program for testing API's.
 - POST on endpoint:  http://127.0.0.1:5000/predict
-- `{
+- body: `{
     "text": ["The acting is terrible, plot is boring and predictable. What a waste of time.."]
 }`
+- response: `[{"prediction":0.0,"probability":0.995847702}]`
 
 ## Model
 ![Screenshot](screenshots/model.png)
