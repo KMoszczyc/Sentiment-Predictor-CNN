@@ -10,6 +10,8 @@ Deep learning model trained on IMDB dataset to predict sentence sentiment, with 
 - POST on endpoint:  http://127.0.0.1:5000/predict
 
 #### Examples
+(prediction 0 - negative sentence, 1 - positive sentence)
+
 - body: `{
     "text": ["The acting is terrible, plot is boring and predictable. What a waste of time.."]
 }`
@@ -20,5 +22,15 @@ Deep learning model trained on IMDB dataset to predict sentence sentiment, with 
 }`
 - response: `[{"prediction":1.0,"probability":0.9719628692}]`
 
+- body:`{
+    "text": ["The pancakes were out of this world, I've never eating something so tasty in my life"]
+}`
+- response: `[{"prediction":1.0,"probability":0.9649505019}]`
+
+- body:`{
+    "text": ["Stuff doesn't care about the customer, had to wait for 30 minutes till somebody showed up. Huge disappointment.e"]
+}`
+- response: `[{"prediction":0.0,"probability":0.8519150615}]`
+- 
 ## Model
 ![Screenshot](screenshots/model.png)
