@@ -1,6 +1,7 @@
 # Sentiment Predictor
 ## About
-Deep learning model trained on IMDB dataset to predict sentence sentiment, with around 89% accuracy. Ready for deployment on Heroku with Flask.
+Deep learning model trained on IMDB dataset to predict sentence sentiment, with around 89% accuracy. The model was also trained on a list of popular positive and negative words as many of those are not present in IMDB dataset.
+Ready for deployment on Heroku with Flask.
 
 ## Usage
 
