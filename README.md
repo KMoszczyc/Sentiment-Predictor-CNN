@@ -26,7 +26,7 @@ response: `[{"prediction":1.0,"probability":0.9719628692}]`
 
 
 `{
-    "text": ["The pancakes were out of this world, I've never eating something so tasty in my life"]
+    "text": ["The pancakes were out of this world, I've never eaten something so tasty in my life"]
 }`
 
 response: `[{"prediction":1.0,"probability":0.9649505019}]`  
