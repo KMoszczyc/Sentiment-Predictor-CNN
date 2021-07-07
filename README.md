@@ -38,5 +38,8 @@ response: `[{"prediction":1.0,"probability":0.9649505019}]`
 
 response: `[{"prediction":0.0,"probability":0.8519150615}]`  
 
+###### Or you can send multiple text samples
+`{ "text": ["The acting is terrible, plot is boring and predictable. What a waste of time..", "A very nice movie", "I like drinking beer with the sunset."] }`  
+response: `[{"prediction":0.0,"probability":0.995847702},{"prediction":1.0,"probability":0.8738321066},{"prediction":1.0,"probability":0.9644991755}]`
 ## Model
 ![Screenshot](screenshots/model.png)
