@@ -33,7 +33,7 @@ response: `[{"prediction":1.0,"probability":0.9719628692}]`
 response: `[{"prediction":1.0,"probability":0.9649505019}]`  
 
 `{
-    "text": ["Stuff doesn't care about the customer, had to wait for 30 minutes till somebody showed up. Huge disappointment.e"]
+    "text": ["Staff doesn't care about the customer, had to wait for 30 minutes till somebody showed up. Huge disappointment."]
 }`
 
 response: `[{"prediction":0.0,"probability":0.8519150615}]`  
