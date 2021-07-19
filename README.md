@@ -10,6 +10,9 @@ Ready for deployment on Heroku with Flask.
 - Open postman or any other program for testing API's.
 - POST on endpoint:  http://127.0.0.1:5000/predict
 
+#### or just use my deployed model on Heroku
+- make POST request on endpoint: https://sentiment-prediction-deepl.herokuapp.com/predict with json that looks like some example below
+
 #### Examples
 (prediction 0 - negative sentence, 1 - positive sentence)
 
