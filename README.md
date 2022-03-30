@@ -16,33 +16,44 @@ Ready for deployment on Heroku with Flask.
 #### Examples
 (prediction 0 - negative sentence, 1 - positive sentence)
 
-`{
+```javascript
+{
     "text": ["The acting is terrible, plot is boring and predictable. What a waste of time.."]
-}`
+}
 
-response: `[{"prediction":0.0,"probability":0.995847702}]`  
+response: [{"prediction":0.0,"probability":0.995847702}]  
 
- `{
+ {
     "text": ["Great acting, amazing cast. Movie is not trivial and not for an average viewer. Pushes to think and ponder on the meaning of life."]
-}`
+}
 
-response: `[{"prediction":1.0,"probability":0.9719628692}]`  
+response: [{"prediction":1.0,"probability":0.9719628692}]
 
 
-`{
+{
     "text": ["The pancakes were out of this world, I've never eaten something so tasty in my life"]
-}`
+}
 
-response: `[{"prediction":1.0,"probability":0.9649505019}]`  
+response: [{"prediction":1.0,"probability":0.9649505019}]  
 
-`{
+{
     "text": ["Staff doesn't care about the customer, had to wait for 30 minutes till somebody showed up. Huge disappointment."]
-}`
+}
 
-response: `[{"prediction":0.0,"probability":0.8519150615}]`  
+response: [{"prediction":0.0,"probability":0.8519150615}] 
+```
 
 #### Or you can send multiple text samples
-`{ "text": ["The acting is terrible, plot is boring and predictable. What a waste of time..", "A very nice movie", "I like drinking beer at the sunset."] }`  
-response: `[{"prediction":0.0,"probability":0.995847702},{"prediction":1.0,"probability":0.8738321066},{"prediction":1.0,"probability":0.9644991755}]`
+```javascript
+{ 
+    "text": ["The acting is terrible, plot is boring and predictable. 
+                What a waste of time..", 
+                "A very nice movie", "I like drinking beer at the sunset."] 
+} 
+
+response: [{"prediction":0.0,"probability":0.995847702},
+            {"prediction":1.0,"probability":0.8738321066},
+            {"prediction":1.0,"probability":0.9644991755}]
+```
 ## Model
 ![Screenshot](screenshots/model.png)
